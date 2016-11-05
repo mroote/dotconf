@@ -1,6 +1,6 @@
 " Start Pathogen plugin manager
 execute pathogen#infect()
-
+set shell=/bin/sh
 " Use space instead of tabs 4 chars
 set expandtab
 set tabstop=4
@@ -80,28 +80,12 @@ set directory=~/tmp,/tmp " swap files
 " Map Nerdtree
 map <Leader>n :NERDTreeToggle<CR>
 
-" Map undotree toggle
-nnoremap <Leader>u :UndotreeToggle<CR>
-
 " Start Nerdtree if no files specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Disable gitgutter by default
 let g:gitgutter_enabled = 0
-
-" Use system clipboard
-set clipboard=unamed
-
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 " Golang highlighting
 let g:go_highlight_functions = 1
@@ -110,20 +94,32 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
+" vim-go mappings
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>gs <Plug>(go-implements)
+au FileType go nmap <Leader>gi <Plug>(go-info)
+au FileType go nmap <Leader>gr <Plug>(go-rename)
+
 " Enable goimports
 let g:go_fmt_command = "goimports"
-" Syntastic also checks imports, disables menu
-let g:go_fmt_fail_silently = 1
 
 " Map leader W to save without sudo
 noremap <Leader>w :w !sudo tee % > /dev/null
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" Show errors in bottom window
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+" Toggle syntastic checking
+"nnoremap <Leader>s :SyntasticCheck<CR>
+"nnoremap <Leader>sd :SyntasticToggleMode<CR>
 
-nnoremap <Leader>s :SyntasticCheck<CR>
-nnoremap <Leader>sd :SyntasticToggleMode<CR>
+" Format JSON files to be readable
+nnoremap <Leader>f :%!python -m json.tool<CR>
+
+" Create undo dir to save undo after closing files
+set undofile
+set undodir=~/.vim/undodir

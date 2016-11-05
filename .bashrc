@@ -61,8 +61,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Source GOPATH
-export GOPATH=/home/mitch/prog/go
-
 export NVM_DIR="/home/mitch/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+

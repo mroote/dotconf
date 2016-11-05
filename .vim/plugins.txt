@@ -10,4 +10,3 @@ https://github.com/airblade/vim-gitgutter.git
 https://github.com/fatih/vim-go.git
 https://github.com/tpope/vim-surround.git
 https://github.com/Valloric/YouCompleteMe.git
-https://github.com/mbbill/undotree.git
