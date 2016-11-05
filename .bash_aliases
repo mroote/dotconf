@@ -5,7 +5,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -35,3 +34,13 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 #    config commit -m "Add redshift config"
 #    config push
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+
+genpasswd() {
+    local l=$1
+        [ "$l" == "" ] && l=16
+        tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
+}
+
+kill_tmux() {
+    w | awk '/\:0/ && /tmux -2/ {print $2}' | xargs -0 -I {} sh -c "ps aux | awk '/tmux/ && /pts\/3/'" | awk '{print $2}' | xargs kill
+}
