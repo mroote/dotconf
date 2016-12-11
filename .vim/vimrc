@@ -106,20 +106,34 @@ let g:go_fmt_command = "goimports"
 " Map leader W to save without sudo
 noremap <Leader>w :w !sudo tee % > /dev/null
 
-" Show errors in bottom window
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-
-" Toggle syntastic checking
-"nnoremap <Leader>s :SyntasticCheck<CR>
-"nnoremap <Leader>sd :SyntasticToggleMode<CR>
-
 " Format JSON files to be readable
 nnoremap <Leader>f :%!python -m json.tool<CR>
 
 " Create undo dir to save undo after closing files
 set undofile
 set undodir=~/.vim/undodir
+
+let g:neocomplete#enable_at_startup = 1
+
+autocmd FileType python setlocal omnifunc=jedi#completions
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+        let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+
+" Add the virtualenv's site-packages to vim path
+if has('python')
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
+endif
