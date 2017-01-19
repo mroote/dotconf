@@ -64,4 +64,6 @@ fi
 export NVM_DIR="/home/mitch/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/prog/python
+source /home/mitch/.local/bin/virtualenvwrapper.sh
