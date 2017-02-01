@@ -150,3 +150,11 @@ if 'VIRTUAL_ENV' in os.environ:
     execfile(activate_this, dict(__file__=activate_this))
 EOF
 endif
+
+" Add pdb debug call to line with leader-p
+map <Leader>p :call InsertLine()<CR>
+
+function! InsertLine()
+  let trace = expand("import pdb; pdb.set_trace()")
+  execute "normal o".trace
+endfunction
