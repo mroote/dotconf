@@ -64,4 +64,6 @@ fi
 export NVM_DIR="/home/mitch/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-
+# Source mkvirtualenv script add ~/.virtualenv directory containing virtualenv's
+source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=~/.virtualenv
