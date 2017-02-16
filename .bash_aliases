@@ -44,3 +44,7 @@ genpasswd() {
 kill_tmux() {
     w | awk '/\:0/ && /tmux -2/ {print $2}' | xargs -0 -I {} sh -c "ps aux | awk '/tmux/ && /pts\/3/'" | awk '{print $2}' | xargs kill
 }
+
+alias kinit='kinit mroote@SECURITYCOMPASS.COM'
+
+alias ssh-agent-up='eval `ssh-agent -s` && ssh-add'
