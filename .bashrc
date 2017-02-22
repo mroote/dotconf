@@ -66,5 +66,5 @@ export NVM_DIR="/home/mitch/.nvm"
 
 # Source mkvirtualenv script add ~/.virtualenv directory containing virtualenv's
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/dev
-source /home/mitch/.local/bin/virtualenvwrapper.sh
+export PROJECT_HOME=$HOME/prog/python
+source /usr/local/bin/virtualenvwrapper.sh
