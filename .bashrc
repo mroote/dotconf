@@ -68,3 +68,6 @@ export NVM_DIR="/home/mitch/.nvm"
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/prog/python
 source /usr/local/bin/virtualenvwrapper.sh
+
+# Auto cd to directory if only directory is provided
+shopt -s autocd
