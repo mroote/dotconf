@@ -7,6 +7,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set shiftround
+" Some files get two spaces
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 
 " text wrapping
 set nowrap  " dont auto wrap on load
@@ -158,3 +161,9 @@ function! InsertLine()
   let trace = expand("import pdb; pdb.set_trace()")
   execute "normal o".trace
 endfunction
+
+" Settings for ALE linter
+let g:ale_sign_error = '>'
+let g:ale_sign_warning = '-'
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
