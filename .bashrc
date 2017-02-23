@@ -71,3 +71,6 @@ source /home/mitch/.local/bin/virtualenvwrapper.sh
 
 # Add GOPATH
 export GOPATH=$HOME/dev/go
+
+# Auto cd to directory if only directory is provided
+shopt -s autocd
