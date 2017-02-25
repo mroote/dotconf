@@ -42,7 +42,7 @@ esac
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+    . ~/.shell_aliases
 fi
 
 # Bash prompt file
