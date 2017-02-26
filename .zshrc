@@ -7,7 +7,7 @@ export ZSH=/home/mitch/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="r00t"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
