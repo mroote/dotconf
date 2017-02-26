@@ -64,13 +64,15 @@ fi
 export NVM_DIR="/home/mitch/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# Setup virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/prog/python
-source /home/mitch/.local/bin/virtualenvwrapper.sh
-
 # Add GOPATH
-export GOPATH=$HOME/dev/go
+export GOPATH=$HOME/prog/go
+
+# Source mkvirtualenv script add ~/.virtualenv directory containing virtualenv's
+if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/prog/python
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 # Auto cd to directory if only directory is provided
 shopt -s autocd
