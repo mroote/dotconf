@@ -41,7 +41,7 @@ esac
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
+if [ -f ~/.shell_aliases ]; then
     . ~/.shell_aliases
 fi
 
@@ -65,9 +65,11 @@ export NVM_DIR="/home/mitch/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Source mkvirtualenv script add ~/.virtualenv directory containing virtualenv's
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/prog/python
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/prog/python
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 # Auto cd to directory if only directory is provided
 shopt -s autocd
