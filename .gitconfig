@@ -1,8 +1,12 @@
 [user]
-	email = mitch@r00t.ca
+    email = mitch@r00t.ca
     name = Mitch Roote
 [core]
     editor = vim
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [status]
     showuntrackedfiles = no
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
