@@ -1,5 +1,5 @@
 [user]
-	email = mitch@r00t.ca
+    email = mitch@r00t.ca
     name = Mitch Roote
 [core]
     editor = vim
@@ -8,3 +8,5 @@
     showuntrackedfiles = no
 [diff]
     tool = vimdiff
+[difftool]
+    prompt = false
