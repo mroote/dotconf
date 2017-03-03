@@ -13,7 +13,7 @@ export ZSH_CUSTOM=$HOME/.zsh
 ZSH_THEME="r00t"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -27,7 +27,6 @@ plugins=(git pip python docker systemd tmux virtualenvwrapper)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 # Source aliases
 if [ -f ~/.shell_aliases ]; then
     source $HOME/.shell_aliases
