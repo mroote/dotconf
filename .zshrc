@@ -27,7 +27,6 @@ plugins=(git pip python docker systemd tmux virtualenvwrapper)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 # Source aliases
 if [ -f ~/.shell_aliases ]; then
     source $HOME/.shell_aliases
