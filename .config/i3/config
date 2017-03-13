@@ -152,12 +152,14 @@ bindsym $mod+l exec --no-startup-id $Locker
 bar {
   status_command goblocks
   tray_output primary
+  workspace_buttons yes
+  separator_symbol " "
   colors {
     separator #969896
     background #1d1f21
     statusline #c5c8c6
     focused_workspace #81a2be #81a2be #1d1f21
-    active_workspace #373b41 #373b41 #ffffff
+    active_workspace #373b41 #373b41 #282828
     inactive_workspace #282a2e #282a2e #969896
     urgent_workspace #cc6666 #cc6666 #ffffff
   }
@@ -172,6 +174,7 @@ client.urgent #373b41 #cc6666 #ffffff #cc6666
 #
 # Use compton compositor to prevent screen tearing
 exec --no-startup-id compton --config ~/.config/compton.conf -b
+exec --no-startup-id volti
 
 # Keyboard controls
 # Sreen brightness controls
