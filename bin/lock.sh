@@ -3,15 +3,14 @@
 #depends on: imagemagick, i3lock, scrot
 
 LOCK_ICON=$HOME/.config/screen-lock.png
-LOCK_TEXT='Locked'
+LOCK_TEXT=$(fortune -s literature)
 LOCK_TEXT_TMP=/tmp/locktext.png
 LOCK_TMP=/tmp/lock.png
 
 scrot $LOCK_TMP
 convert $LOCK_TMP -scale 10% -scale 1000% -fill black -colorize 20% $LOCK_TMP
 
-if [[ -f $LOCK_ICON ]]
-then
+if [[ -f $LOCK_ICON ]]; then
     # placement x/y
     PX=0
     PY=0
@@ -33,7 +32,7 @@ then
         TEXT_PX=$(($SROX))
         TEXT_PY=$(($PY + 200))
         # Create text banner with correct dimensions
-        convert -size $(echo $SRX)x60 xc:white -font Liberation-Sans -pointsize 26 -fill black -gravity center -annotate +0+0 "$LOCK_TEXT" $LOCK_TEXT_TMP
+        convert -size $(echo $SRX)x80 xc:grey -font Liberation-Sans -pointsize 18 -fill black -gravity center -annotate +0+0 "$LOCK_TEXT" $LOCK_TEXT_TMP
         convert $LOCK_TEXT_TMP -alpha set -channel A -evaluate set 50% $LOCK_TEXT_TMP
         # Create lock screen images
         convert $LOCK_TMP $LOCK_TEXT_TMP -geometry +$TEXT_PX+$TEXT_PY -composite $LOCK_TMP
