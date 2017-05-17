@@ -20,7 +20,7 @@ set fo-=t   " dont wrap when typing
 " Enable auto indenting
 filetype plugin indent on
 
-" Identing options. 
+" Identing options.
 set autoindent
 
 " Dark background
@@ -33,7 +33,7 @@ syntax enable
 set t_Co=256
 
 " Colorscheme
-colorscheme jellybeans 
+colorscheme jellybeans
 
 " Add column at 80 char
 set colorcolumn=80
@@ -45,26 +45,35 @@ set number
 " mouse mode
 set mouse=a
 
+" Highlight matching parenthesis
+set showmatch
+
+" show autocompletion menu when opening files
+set wildmenu
+
 " fix backspace
 set bs=2
 
 " easier indenting of code blocks
-vnoremap < <gv 
+vnoremap < <gv
 vnoremap > >gv
 
 " If i search in uppercase, it's case sensitive. If I search in lowercase,
 " it isn't.
 set smartcase
+" Search as I type
+set incsearch
 
 " Scroll sideways a character at a time, rather than a screen at a time
 set sidescroll=1
 
+" make status bar 2 lines
 set laststatus=2
 
 " show hidden characters
 nnoremap <silent><F6> :set list!<CR>
 
-" Stops the cursor reaching the bottom of the screen 
+" Stops the cursor reaching the bottom of the screen
 set scrolloff=3
 
 " tap F3 to toggle line numbers
@@ -74,7 +83,7 @@ nnoremap <silent><F3> :set number!<CR>
 nmap <Leader>g :GitGutterToggle<CR>
 
 " show spelling mistakes by pressing F10. Move over a word and press tap z=
-" (not in insert mode) to get a list of suggestions 
+" (not in insert mode) to get a list of suggestions
 noremap <silent><F10> :set spell!<CR>
 
 " backup options

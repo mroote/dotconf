@@ -2,8 +2,11 @@
 
 #depends on: imagemagick, i3lock, scrot
 
+# Lock icon and text values
 LOCK_ICON=$HOME/.config/screen-lock.png
 LOCK_TEXT=$(fortune -s literature)
+
+# TMP files
 LOCK_TEXT_TMP=/tmp/locktext.png
 LOCK_TMP=/tmp/lock.png
 
