@@ -31,3 +31,7 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.shell_aliases ]; then
     source $HOME/.shell_aliases
 fi
+
+if [ -f ~/.profile ] ; then
+    source $HOME/.profile
+fi
