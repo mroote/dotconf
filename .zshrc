@@ -1,6 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Source .profile paths
+if [ -f $HOME/.profile ]; then
+    source $HOME/.profile
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/mitch/.oh-my-zsh
 
@@ -28,10 +33,21 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 # Source aliases
-if [ -f ~/.shell_aliases ]; then
+if [ -f $HOME/.shell_aliases ]; then
     source $HOME/.shell_aliases
 fi
 
 if [ -f ~/.profile ] ; then
     source $HOME/.profile
+fi
+
+# Source nvm
+export NVM_DIR="/home/mitch/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Source mkvirtualenv script add ~/.virtualenv directory containing virtualenv's
+if [ -f $HOME/.local/bin/virtualenvwrapper.sh ] ; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/prog/python
+    source $HOME/.local/bin/virtualenvwrapper.sh
 fi

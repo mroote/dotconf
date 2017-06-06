@@ -8,6 +8,8 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+GODIR="$HOME/prog/go"
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -22,11 +24,13 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # add go bin paths
-PATH=$PATH:$HOME/prog/go/bin
+PATH=$PATH:$GODIR/bin
 PATH=$PATH:/usr/local/go/bin
 
 # Add GOPATH
-export GOPATH=$HOME/prog/go
+if [ -d $GODIR ] ; then
+    export GOPATH=$GODIR
+fi
 
 # Source nvm
 export NVM_DIR="/home/mitch/.nvm"
@@ -38,3 +42,4 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
     export PROJECT_HOME=$HOME/prog/python
     source /usr/local/bin/virtualenvwrapper.sh
 fi
+

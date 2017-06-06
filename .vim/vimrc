@@ -12,6 +12,8 @@ set shiftround
 " Some files get two spaces
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType puppet setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType htmldjango setlocal ts=2 sts=2 sw=2 expandtab
 
 " text wrapping
 set nowrap  " dont auto wrap on load
@@ -140,7 +142,7 @@ autocmd FileType python setlocal completeopt-=preview
 " jedi-vim keyboard shortcuts
 let g:jedi#goto_command = "<leader>d"
 let g:jedi#goto_assignments_command = "<leader>a"
-let g:jedi#goto_definitions_command = ""
+let g:jedi#goto_definitions_command = "<leader>s"
 let g:jedi#documentation_command = "K"
 let g:jedi#usages_command = "<leader>u"
 let g:jedi#completions_command = "<C-Space>"
@@ -176,6 +178,8 @@ endfunction
 " Settings for ALE linter
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '-'
+let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_linter_aliases = {'javascript.jsx': 'javascript', 'jsx': 'javascript'}
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 " Lint jsx files
@@ -186,3 +190,13 @@ augroup END
 
 " Strip whitespace on save
 autocmd BufEnter * EnableStripWhitespaceOnSave
+
+" airline config
+let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
+
+" vim-markdown-preview config
+let vim_markdown_preview_browser='firefox'
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_use_xdg_open=1
+let vim_markdown_preview_toggle=1
