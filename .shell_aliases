@@ -3,7 +3,7 @@ alias tmux='tmux -2'
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls -CFl'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -14,6 +14,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
+alias ssh-agent-up='eval `ssh-agent -s` && ssh-add'
+
+# Run screen locker
+alias lock-screen='. ~/bin/lock.sh'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -49,13 +54,6 @@ genpasswd() {
 kill_tmux() {
     w | awk '/\:0/ && /tmux -2/ {print $2}' | xargs -0 -I {} sh -c "ps aux | awk '/tmux/ && /pts\/3/'" | awk '{print $2}' | xargs kill
 }
-
-alias kinit='kinit'
-
-alias ssh-agent-up='eval `ssh-agent -s` && ssh-add'
-
-# Run screen locker
-alias lock-screen='. ~/bin/lock.sh'
 
 # Create a new directory and enter it
 mkd() {
