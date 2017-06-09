@@ -19,10 +19,10 @@ fi
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-#  Add config command for local conf files.  
+#  Add config command for local conf files.
 #  This Alias allows adding and editing config files for each computer
 #  Each computer can get a new branch
-#  
+#
 #  To Create:
 #    git init --bare $HOME/.myconf
 #    config config status.showUntrackedFiles no
@@ -49,6 +49,8 @@ genpasswd() {
 kill_tmux() {
     w | awk '/\:0/ && /tmux -2/ {print $2}' | xargs -0 -I {} sh -c "ps aux | awk '/tmux/ && /pts\/3/'" | awk '{print $2}' | xargs kill
 }
+
+alias kinit='kinit'
 
 alias ssh-agent-up='eval `ssh-agent -s` && ssh-add'
 
@@ -126,4 +128,8 @@ openimage() {
 		--scale-down --draw-filename \
 		--image-bg black \
 		--start-at "$file"
+}
+
+powerusage() {
+    awk '{print $1*10^-6 " W"}' /sys/class/power_supply/BAT1/power_now
 }
