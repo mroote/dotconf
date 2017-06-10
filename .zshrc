@@ -1,1 +1,1 @@
-/home/mitch/.zprezto/runcoms/zshrc
+/home/mitch/.zsh/zshrc
