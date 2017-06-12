@@ -8,7 +8,7 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-GODIR="$HOME/prog/go"
+GODIR="$HOME/src/go"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -43,3 +43,8 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
+if [ -f /usr/bin/virtualenvwrapper.sh ] ; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/prog/python
+    source /usr/bin/virtualenvwrapper.sh
+fi
