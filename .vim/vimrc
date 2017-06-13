@@ -168,10 +168,10 @@ EOF
 endif
 
 " Add pdb debug call to line with leader-p
-map <Leader>p :call InsertLine()<CR>
+map <Leader>p :call InsertLine("import pdb; pdb.set_trace")<CR>
 
-function! InsertLine()
-  let trace = expand("import pdb; pdb.set_trace()")
+function! InsertLine(command)
+  let trace = expand(a:command)
   execute "normal o".trace
 endfunction
 
