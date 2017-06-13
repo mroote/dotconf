@@ -60,6 +60,12 @@ set bs=2
 vnoremap < <gv
 vnoremap > >gv
 
+" Automatically resize splits
+autocmd VimResized * wincmd =
+
+" Global replace by default
+set gdefault
+
 " If i search in uppercase, it's case sensitive. If I search in lowercase,
 " it isn't.
 set smartcase
@@ -68,6 +74,10 @@ set incsearch
 
 " Scroll sideways a character at a time, rather than a screen at a time
 set sidescroll=1
+
+" Allow tab completion in command bar
+set wildmenu
+set wildmode=full
 
 " make status bar 2 lines
 set laststatus=2
