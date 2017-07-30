@@ -58,6 +58,7 @@ kill_tmux() {
     w | awk '/\:0/ && /tmux -2/ {print $2}' | xargs -0 -I {} sh -c "ps aux | awk '/tmux/ && /pts\/3/'" | awk '{print $2}' | xargs kill
 }
 
+# Some useful aliases borrowed from: https://github.com/jessfraz/dotfiles
 # Create a new directory and enter it
 mkd() {
 	mkdir -p "$@"
