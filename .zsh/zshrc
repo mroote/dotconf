@@ -32,3 +32,6 @@ if [ -f $HOME/.local/bin/virtualenvwrapper.sh ] ; then
     source $HOME/.local/bin/virtualenvwrapper.sh
 fi
 
+# Enable ctl-r history search
+bindkey -v
+bindkey '^R' history-incremental-search-backward

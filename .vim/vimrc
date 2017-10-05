@@ -53,6 +53,9 @@ set showmatch
 " show autocompletion menu when opening files
 set wildmenu
 
+" Allow tab completion in command bar
+set wildmode=full
+
 " fix backspace
 set bs=2
 
@@ -74,10 +77,6 @@ set incsearch
 
 " Scroll sideways a character at a time, rather than a screen at a time
 set sidescroll=1
-
-" Allow tab completion in command bar
-set wildmenu
-set wildmode=full
 
 " make status bar 2 lines
 set laststatus=2
@@ -144,12 +143,14 @@ let g:neocomplete#enable_at_startup = 1
 
 " use neocomplete for python using jedi-vim
 autocmd FileType python setlocal omnifunc=jedi#completions
+
+" jedi-vim settings
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#show_call_signatures = 2
 " Disable autopopup of docstring
 autocmd FileType python setlocal completeopt-=preview
-" jedi-vim keyboard shortcuts
+" Python jedi-vim keyboard shortcuts
 let g:jedi#goto_command = "<leader>d"
 let g:jedi#goto_assignments_command = "<leader>a"
 let g:jedi#goto_definitions_command = "<leader>s"
