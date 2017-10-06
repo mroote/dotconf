@@ -1,6 +1,5 @@
 " Start Pathogen plugin manager
 execute pathogen#infect()
-set shell=/bin/sh
 
 " Use space instead of tabs 4 chars
 set expandtab
