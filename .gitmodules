@@ -58,9 +58,6 @@
 [submodule ".vim/bundle/vim-markdown-preview"]
 	path = .vim/bundle/vim-markdown-preview
 	url = https://github.com/JamshedVesuna/vim-markdown-preview.git
-[submodule ".vim/bundle/vim-puppet"]
-	path = .vim/bundle/vim-puppet
-	url = git@github.com:rodjek/vim-puppet.git
 [submodule ".zprezto"]
 	path = .zprezto
 	url = https://github.com/sorin-ionescu/prezto.git
