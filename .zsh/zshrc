@@ -35,3 +35,6 @@ fi
 # Enable ctl-r history search
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+
+# Set prompt to UTF-8
+export LANG="en_CA.UTF-8"
