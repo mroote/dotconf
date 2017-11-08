@@ -1,5 +1,10 @@
 alias tmux='tmux -2'
 
+# If neovim installed use it
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -7,6 +12,7 @@ alias l='ls -CFl'
 
 # Find aliases
 alias ff="find . -type f -name"
+alias fr="find . -type f -regex"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -18,7 +24,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-alias ssh-agent-up='eval `ssh-agent -s` && ssh-add'
+alias sshup='eval `ssh-agent -s` && ssh-add'
 
 # Run screen locker
 alias lock-screen='. ~/bin/lock.sh'
@@ -135,4 +141,20 @@ openimage() {
 
 powerusage() {
     awk '{print $1*10^-6 " W"}' /sys/class/power_supply/BAT1/power_now
+}
+
+rmsubmodule() {
+	if [ -z "${1}" ]; then
+		echo "ERROR: No Git submodule specified."
+		return 1
+	fi
+
+    local submodule_name="$(echo -e "$1" | sed 's/\/$//')"
+    echo "Removing submodule ${submodule_name}..\n"
+
+    if config submodule status "$submodule_name" >/dev/null 2>&1; then
+        config submodule deinit -f "$submodule_name"
+        config rm -f "$submodule_name"
+        config config -f .gitmodules --remove-section "submodule.$submodule_name"
+    fi
 }

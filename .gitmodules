@@ -22,9 +22,6 @@
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/neocomplete.vim"]
-	path = .vim/bundle/neocomplete.vim
-	url = https://github.com/Shougo/neocomplete.vim.git
 [submodule ".vim/bundle/vim-airline"]
 	path = .vim/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
@@ -67,3 +64,12 @@
 [submodule ".zprezto"]
 	path = .zprezto
 	url = https://github.com/sorin-ionescu/prezto.git
+[submodule ".vim/bundle/deoplete"]
+	path = .vim/bundle/deoplete
+	url = git@github.com:Shougo/deoplete.nvim.git
+[submodule ".vim/bundle/nvim-python-client"]
+	path = .vim/bundle/nvim-python-client
+	url = git@github.com:neovim/python-client.git
+[submodule ".vim/bundle/neco-vim"]
+	path = .vim/bundle/neco-vim
+	url = git@github.com:Shougo/neco-vim.git

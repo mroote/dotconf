@@ -1,6 +1,5 @@
 " Start Pathogen plugin manager
 execute pathogen#infect()
-set shell=/bin/sh
 
 " Use space instead of tabs 4 chars
 set expandtab
@@ -8,7 +7,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set shiftround
-
+set encoding=utf-8
 " Some files get two spaces
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
@@ -128,6 +127,9 @@ au FileType go nmap <Leader>gr <Plug>(go-rename)
 " Enable goimports
 let g:go_fmt_command = "goimports"
 
+" Show Go type info in status bar
+let g:go_auto_type_info = 1
+
 " Map leader W to save without sudo
 noremap <Leader>w :w !sudo tee % > /dev/null
 
@@ -138,14 +140,8 @@ nnoremap <Leader>f :%!python -m json.tool<CR>
 set undofile
 set undodir=~/.vim/undodir
 
-" Enable neocomplete
-let g:neocomplete#enable_at_startup = 1
-
-" use neocomplete for python using jedi-vim
-autocmd FileType python setlocal omnifunc=jedi#completions
-
 " jedi-vim settings
-let g:jedi#completions_enabled = 0
+let g:jedi#completions_enabled = 1
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#show_call_signatures = 2
 " Disable autopopup of docstring
@@ -159,10 +155,8 @@ let g:jedi#usages_command = "<leader>u"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
 
-if !exists('g:neocomplete#force_omni_input_patterns')
-        let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+" Enable deoplete
+let g:deoplete#enable_at_startup = 1
 
 " Add the virtualenv's site-packages to vim path
 if has('python')
@@ -205,6 +199,7 @@ autocmd BufEnter * EnableStripWhitespaceOnSave
 " airline config
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
+let g:airline#extensions#ale#enabled = 1
 
 " vim-markdown-preview config
 let vim_markdown_preview_browser='firefox'

@@ -24,3 +24,6 @@ fi
 # Enable ctl-r history search
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+
+# Set correct TERM if running tmux
+[[ $TMUX != "" ]] && export TERM="screen-256color"
