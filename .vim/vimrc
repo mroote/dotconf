@@ -141,7 +141,7 @@ set undofile
 set undodir=~/.vim/undodir
 
 " jedi-vim settings
-let g:jedi#completions_enabled = 1
+let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#show_call_signatures = 2
 " Disable autopopup of docstring
@@ -157,6 +157,10 @@ let g:jedi#rename_command = "<leader>r"
 
 " Enable deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+" Use tab with deoplete and close after completion
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Add the virtualenv's site-packages to vim path
 if has('python')

@@ -73,3 +73,6 @@
 [submodule ".vim/bundle/neco-vim"]
 	path = .vim/bundle/neco-vim
 	url = git@github.com:Shougo/neco-vim.git
+[submodule ".vim/bundle/deoplete-go"]
+	path = .vim/bundle/deoplete-go
+	url = git@github.com:zchee/deoplete-go.git

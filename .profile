@@ -6,7 +6,6 @@
 
 EDITOR="/usr/bin/vim"
 VISUAL=$EDITOR
-
 GODIR="$HOME/src/go"
 
 # if running bash
@@ -35,14 +34,7 @@ fi
 export NVM_DIR="/home/mitch/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# Source mkvirtualenv script add ~/.virtualenv directory containing virtualenv's
-if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PROJECT_HOME=$HOME/prog/python
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-
-if [ -f /usr/bin/virtualenvwrapper.sh ] ; then
+if [ -f /usr/bin/virtualenvwrapper.sh ] || [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
     export WORKON_HOME=$HOME/.virtualenvs
     export PROJECT_HOME=$HOME/prog/python
     source /usr/bin/virtualenvwrapper.sh
