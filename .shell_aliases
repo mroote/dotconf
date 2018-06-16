@@ -158,3 +158,11 @@ rmsubmodule() {
         config config -f .gitmodules --remove-section "submodule.$submodule_name"
     fi
 }
+
+list_path() {
+    for dir in `echo $PATH | sed 's/:/ /g'`
+    do
+        echo Listing dir: $dir
+        ls -l $dir | nl
+    done | less
+}
