@@ -166,3 +166,25 @@ list_path() {
         ls -l $dir | nl
     done | less
 }
+
+wait_for_port() {
+	if [ -z "${1}" ]; then
+		echo "ERROR: No IP specified."
+		return 1
+	fi
+
+	if [ -z "${2}" ]; then
+		echo "ERROR: No port specified."
+		return 1
+	fi
+
+    local ip="${1}"
+    local port="${2}"
+
+    while [ $(nc -z -w1 "$ip" "$port" &> /dev/null; echo $?) -gt 0 ] ; do
+        echo "Waiting for ${ip}:${port}..."
+        sleep 2
+    done
+
+    return 0
+}
