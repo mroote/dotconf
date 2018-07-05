@@ -182,9 +182,11 @@ wait_for_port() {
     local port="${2}"
 
     while [ $(nc -z -w1 "$ip" "$port" &> /dev/null; echo $?) -gt 0 ] ; do
-        echo "Waiting for ${ip}:${port}..."
+        echo "Waiting for $ip:$port..."
         sleep 2
     done
 
+    # ports listen before service is actually running so wait a bit
+    echo "Connected to $ip:$port..." && sleep 5
     return 0
 }
