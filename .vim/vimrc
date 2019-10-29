@@ -197,15 +197,6 @@ augroup FiletypeGroup
     au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 augroup END
 
-" Strip whitespace on save
-autocmd BufEnter * EnableStripWhitespaceOnSave
-
 " airline config
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
-
-" vim-markdown-preview config
-let vim_markdown_preview_browser='firefox'
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_use_xdg_open=1
-let vim_markdown_preview_toggle=1

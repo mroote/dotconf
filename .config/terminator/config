@@ -1,4 +1,5 @@
 [global_config]
+  enabled_plugins = APTURLHandler, LaunchpadCodeURLHandler, LaunchpadBugURLHandler
 [keybindings]
   help = <Primary><Shift>colon
   split_horiz = <Primary><Shift><Alt>o

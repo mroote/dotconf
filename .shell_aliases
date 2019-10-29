@@ -121,11 +121,11 @@ openimage() {
 	local file
 	file=$(basename "$1")
 
-	feh -q "$file" --auto-zoom \
-		--sort filename --borderless \
-		--scale-down --draw-filename \
-		--image-bg black \
-		--start-at "$file"
+	feh -q --auto-zoom \
+	       --sort filename --borderless \
+	       --scale-down --draw-filename \
+	       --image-bg black \
+	       "${file}"
 }
 
 powerusage() {
