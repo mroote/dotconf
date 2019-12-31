@@ -58,3 +58,6 @@
 [submodule ".zprezto"]
 	path = .zprezto
 	url = https://github.com/sorin-ionescu/prezto.git
+[submodule ".local/share/nvim/site/autoload/vim-plug"]
+	path = .local/share/nvim/site/autoload/vim-plug
+	url = git@github.com:junegunn/vim-plug.git
