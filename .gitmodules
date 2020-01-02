@@ -49,27 +49,30 @@
 [submodule ".vim/bundle/vim-better-whitespace"]
 	path = .vim/bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace.git
-[submodule ".vim/bundle/vim-markdown-preview"]
-	path = .vim/bundle/vim-markdown-preview
-	url = https://github.com/JamshedVesuna/vim-markdown-preview.git
 [submodule ".vim/bundle/vim-puppet"]
 	path = .vim/bundle/vim-puppet
 	url = git@github.com:rodjek/vim-puppet.git
-[submodule ".vim/bundle/tabular"]
-	path = .vim/bundle/tabular
-	url = git@github.com:godlygeek/tabular.git
 [submodule ".zprezto"]
 	path = .zprezto
 	url = https://github.com/sorin-ionescu/prezto.git
-[submodule ".vim/bundle/deoplete"]
+[submodule ".vim/bundle/tagbar"]
+	path = .vim/bundle/tagbar
+	url = git@github.com:majutsushi/tagbar.git
+[submodule ".vim/bundle/deoplete.vim"]
 	path = .vim/bundle/deoplete
 	url = git@github.com:Shougo/deoplete.nvim.git
-[submodule ".vim/bundle/nvim-python-client"]
-	path = .vim/bundle/nvim-python-client
-	url = git@github.com:neovim/python-client.git
+[submodule ".vim/bundle/deoplete-jedi"]
+	path = .vim/bundle/deoplete-jedi
+	url = git@github.com:zchee/deoplete-jedi.git
 [submodule ".vim/bundle/neco-vim"]
 	path = .vim/bundle/neco-vim
 	url = git@github.com:Shougo/neco-vim.git
 [submodule ".vim/bundle/deoplete-go"]
 	path = .vim/bundle/deoplete-go
-	url = git@github.com:zchee/deoplete-go.git
+    url = git@github.com:zchee/deoplete-go.git
+[submodule ".vim/bundle/nvim-python-client"]
+	path = .vim/bundle/nvim-python-client
+    url = git@github.com:neovim/python-client.git
+[submodule ".vim/bundle/tabular"]
+	path = .vim/bundle/tabular
+    url = git@github.com:godlygeek/tabular.git
