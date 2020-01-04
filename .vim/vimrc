@@ -212,9 +212,6 @@ augroup FiletypeGroup
     au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 augroup END
 
-" Strip whitespace on save
-autocmd BufEnter * EnableStripWhitespaceOnSave
-
 " airline config
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
@@ -231,6 +228,3 @@ let g:puppet_align_hashes = 0
 
 " Toggle tagbar
 nmap <Leader>t :TagbarToggle<CR>
-
-" disable terminal prompt change
-set guicursor=

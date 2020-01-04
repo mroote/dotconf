@@ -69,10 +69,23 @@
 	url = git@github.com:Shougo/neco-vim.git
 [submodule ".vim/bundle/deoplete-go"]
 	path = .vim/bundle/deoplete-go
-    url = git@github.com:zchee/deoplete-go.git
+    	url = git@github.com:zchee/deoplete-go.git
 [submodule ".vim/bundle/nvim-python-client"]
 	path = .vim/bundle/nvim-python-client
     url = git@github.com:neovim/python-client.git
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
     url = git@github.com:godlygeek/tabular.git
+[submodule ".vim/bundle/vim-markdown-preview"]
+	path = .vim/bundle/vim-markdown-preview
+	url = https://github.com/JamshedVesuna/vim-markdown-preview.git
+[submodule ".zprezto"]
+	path = .zprezto
+	url = https://github.com/sorin-ionescu/prezto.git
+[submodule ".local/share/nvim/site/autoload/vim-plug"]
+	path = .local/share/nvim/site/autoload/vim-plug
+	url = git@github.com:junegunn/vim-plug.git
+[submodule ".vim/bundle/ultisnips"]
+       path = .vim/bundle/ultisnips
+       url = https://github.com/SirVer/ultisnips.git
+

@@ -77,3 +77,4 @@ fi
 
 # Auto cd to directory if only directory is provided
 shopt -s autocd
+

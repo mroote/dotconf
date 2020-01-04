@@ -2,17 +2,12 @@
     email = mitch@r00t.ca
     name = Mitch Roote
 [core]
-    editor = vim
+    editor = nvim
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [difftool]
     prompt = false
 [status]
     submoduleSummary = true
-[core]
-    editor = vim
-    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-[difftool]
-	prompt = false
 [alias]
     d = difftool
     c = commit -v
