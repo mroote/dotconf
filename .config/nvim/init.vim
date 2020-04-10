@@ -17,6 +17,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'justinj/vim-react-snippets'
 Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'lepture/vim-jinja'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
