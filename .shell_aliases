@@ -14,6 +14,8 @@ alias l='ls -CFl'
 alias ff="find . -type f -name"
 alias fr="find . -type f -regex"
 
+alias k="kubectl"
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
