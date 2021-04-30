@@ -1,4 +1,4 @@
-alias tmux='tmux -2'
+alias tmux='tmux -2 new-session -A -s main'
 
 # If neovim installed use it
 if type nvim > /dev/null 2>&1; then

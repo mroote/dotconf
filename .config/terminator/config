@@ -1,9 +1,21 @@
 [global_config]
   enabled_plugins = APTURLHandler, LaunchpadCodeURLHandler, LaunchpadBugURLHandler
 [keybindings]
-  help = <Primary><Shift>colon
   split_horiz = <Primary><Shift><Alt>o
   split_vert = <Primary><Shift><Alt>e
+  help = <Primary><Shift>colon
+[profiles]
+  [[default]]
+    background_color = "#222222"
+    cursor_color = "#aaaaaa"
+    font = Hack 14
+    foreground_color = "#d3d7cf"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    use_system_font = False
+    copy_on_selection = True
 [layouts]
   [[default]]
     [[[child1]]]
@@ -13,14 +25,3 @@
       parent = ""
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    background_color = "#222222"
-    copy_on_selection = True
-    cursor_color = "#aaaaaa"
-    font = Hack 12
-    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
-    scrollback_infinite = True
-    scrollbar_position = hidden
-    show_titlebar = False
-    use_system_font = False
