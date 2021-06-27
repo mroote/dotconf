@@ -1,16 +1,8 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-
 # User configuration
+
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=100000
 
 # Source aliases
 if [ -f $HOME/.shell_aliases ]; then
@@ -34,3 +26,17 @@ bindkey '^R' history-incremental-search-backward
 
 # Set prompt to UTF-8
 export LANG="en_CA.UTF-8"
+
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl true
+zstyle :compinstall filename '/home/mitch/.zshrc'
+
+autoload -Uz compinit
+compinit
+setopt autocd extendedglob notify
+unsetopt beep nomatch
+bindkey -e
