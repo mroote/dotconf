@@ -1,10 +1,12 @@
 [user]
-    email = mitch@r00t.ca
+    email = mitch.roote@esentire.com
     name = Mitch Roote
 [core]
-    editor = vim
+    editor = nvim
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [diff]
     tool = vimdiff
 [difftool]
     prompt = false
+[alias]
+	c = commit --verbose

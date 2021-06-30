@@ -1,9 +1,9 @@
-alias tmux='tmux -2'
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+alias vim=nvim
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
