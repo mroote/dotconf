@@ -1,5 +1,17 @@
 # User configuration
 
+fpath+=$HOME/.zsh/themes/pure
+autoload -Uz compinit
+compinit
+autoload -U promptinit; promptinit
+prompt pure
+setopt autocd extendedglob notify
+unsetopt beep nomatch
+bindkey -e
+
+# Set prompt to UTF-8
+export LANG="en_CA.UTF-8"
+
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=100000
@@ -20,13 +32,6 @@ bindkey '^R' history-incremental-search-backward
 # Set correct TERM if running tmux
 [[ $TMUX != "" ]] && export TERM="screen-256color"
 
-# Enable ctl-r history search
-bindkey -v
-bindkey '^R' history-incremental-search-backward
-
-# Set prompt to UTF-8
-export LANG="en_CA.UTF-8"
-
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-colors ''
@@ -34,9 +39,3 @@ zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl true
 zstyle :compinstall filename '/home/mitch/.zshrc'
-
-autoload -Uz compinit
-compinit
-setopt autocd extendedglob notify
-unsetopt beep nomatch
-bindkey -e

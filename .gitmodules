@@ -2,3 +2,6 @@
 	path = .local/share/nvim/site/autoload/vim-plug
 	url = git@github.com:junegunn/vim-plug.git
 
+[submodule ".zsh/themes/pure"]
+	path = .zsh/themes/pure
+	url = https://github.com/sindresorhus/pure.git
