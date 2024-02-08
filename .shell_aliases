@@ -127,3 +127,8 @@ openimage() {
 		--image-bg black \
 		--start-at "$file"
 }
+
+fjq() {
+   local filename=$1
+   echo '' | fzf --preview "jq {q} < ${filename}"
+}
