@@ -1,5 +1,4 @@
-# @gf3’s Sexy Bash Prompt, inspired by “Extravagant Zsh Prompt”
-# Shamelessly copied from https://github.com/gf3/dotfiles
+# based on https://github.com/gf3/dotfiles
 
 default_username='unknown'
 OSNAME=""
@@ -41,7 +40,7 @@ function git_info() {
   branch=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||')
 
   # check if it's dirty (via github.com/sindresorhus/pure)
-  dirty=$(git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ]&& echo -e "*")
+  dirty=$(git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ] && echo -e "*")
 
   echo $RESET$BOLD" on "$PURPLE$branch$dirty
 }
