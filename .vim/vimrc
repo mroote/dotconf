@@ -1,6 +1,3 @@
-" Start Pathogen plugin manager
-execute pathogen#infect()
-
 " Use space instead of tabs 4 chars
 set expandtab
 set tabstop=4
@@ -94,9 +91,6 @@ set scrolloff=3
 " tap F3 to toggle line numbers
 nnoremap <silent><F3> :set number!<CR>
 
-" Tap leader g to toggle gitgutter
-nmap <Leader>g :GitGutterToggle<CR>
-
 " show spelling mistakes by pressing F10. Move over a word and press tap z=
 " (not in insert mode) to get a list of suggestions
 noremap <silent><F10> :set spell!<CR>
@@ -105,35 +99,6 @@ noremap <silent><F10> :set spell!<CR>
 set backup " enable backups
 set backupdir=~/tmp,/tmp " backups (~)
 set directory=~/tmp,/tmp " swap files
-
-" Map Nerdtree
-map <Leader>n :NERDTreeToggle<CR>
-
-" Start Nerdtree if no files specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" Map Explore
-map <Leader>e :Sexplore!<CR>
-
-" Disable gitgutter by default
-let g:gitgutter_enabled = 0
-
-" Golang highlighting
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-" vim-go mappings
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <Leader>gs <Plug>(go-implements)
-au FileType go nmap <Leader>gi <Plug>(go-info)
-au FileType go nmap <Leader>gr <Plug>(go-rename)
-
-" Enable goimports
-let g:go_fmt_command = "goimports"
 
 " Map leader W to save without sudo
 noremap <Leader>w :w !sudo tee % > /dev/null
@@ -144,87 +109,3 @@ nnoremap <Leader>f :%!python -m json.tool<CR>
 " Create undo dir to save undo after closing files
 set undofile
 set undodir=~/.vim/undodir
-
-" use neocomplete for python using jedi-vim
-"autocmd FileType python setlocal omnifunc=jedi#completions
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#show_call_signatures = 2
-" Disable autopopup of docstring
-autocmd FileType python setlocal completeopt-=preview
-" jedi-vim keyboard shortcuts
-let g:jedi#goto_command = "<leader>d"
-let g:jedi#goto_assignments_command = "<leader>a"
-let g:jedi#goto_definitions_command = "<leader>s"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>u"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#rename_command = "<leader>r"
-
-" Enable deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#deoplete_onmni_patterns = get(g:, 'deoplete#force_omni_input_patterns', {})
-
-" Add the virtualenv's site-packages to vim path
-if has('python3')
-python3 << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    exec(open(activate_this).read(), dict(__file__=activate_this))
-EOF
-elseif has('python2')
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
-endif
-
-" Add pdb debug call to line with leader-p
-map <Leader>p :call InsertLine("import pdb; pdb.set_trace")<CR>
-
-function! InsertLine(command)
-  let trace = expand(a:command)
-  execute "normal o".trace
-endfunction
-
-" Settings for ALE linter
-let g:ale_sign_error = '>'
-let g:ale_sign_warning = '-'
-let g:ale_linters = {'javascript': ['eslint']}
-highlight clear ALEErrorSign
-highlight clear ALEWarningSign
-" Lint jsx files
-let g:ale_linter_aliases = {'javascript.jsx': 'javascript', 'jsx': 'javascript'}
-augroup FiletypeGroup
-    autocmd!
-    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-augroup END
-
-" airline config
-let g:airline_powerline_fonts = 1
-let g:airline_skip_empty_sections = 1
-let g:airline#extensions#ale#enabled = 1
-
-" vim-markdown-preview config
-let vim_markdown_preview_browser='firefox'
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_use_xdg_open=1
-let vim_markdown_preview_toggle=1
-
-" Disable autoformatting of Puppet rockets
-let g:puppet_align_hashes = 0
-
-" Toggle tagbar
-nmap <Leader>t :TagbarToggle<CR>
