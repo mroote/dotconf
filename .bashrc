@@ -83,6 +83,4 @@ if [ ! -e /var/run/docker.sock ]; then
   wsl.exe -u root -e sh -c "service docker start" > /dev/null
 fi
 
-wsl.exe -d wsl-vpnkit service -N wsl-vpnkit start
-
 PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
