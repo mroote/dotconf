@@ -1,10 +1,10 @@
 # User configuration
 
 fpath+=$HOME/.zsh/themes/pure
-autoload -Uz compinit
-compinit
-autoload -U promptinit; promptinit
+autoload -Uz compinit && compinit
+autoload -U promptinit && promptinit
 prompt pure
+
 setopt autocd extendedglob notify
 unsetopt beep nomatch
 bindkey -e
@@ -39,3 +39,4 @@ zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl true
 zstyle :compinstall filename '/home/mitch/.zshrc'
+
