@@ -64,6 +64,9 @@ fi
 export NVM_DIR="/home/mitch/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# source NVM completions
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # Source mkvirtualenv script add ~/.virtualenv directory containing virtualenv's
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
@@ -73,4 +76,13 @@ fi
 
 # Auto cd to directory if only directory is provided
 shopt -s autocd
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Run docker daemon if socket doesn't exist yet
+if [ ! -e /var/run/docker.sock ]; then
+  echo "Starting docker..."
+  wsl.exe -u root -e sh -c "service docker start" > /dev/null
+fi
+
+wsl.exe -d wsl-vpnkit service -N wsl-vpnkit start
+
+PATH=$PATH:/home/linuxbrew/.linuxbrew/bin

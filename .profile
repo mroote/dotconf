@@ -20,6 +20,10 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 
 # add go bin paths
 PATH=$PATH:$HOME/prog/go/bin
@@ -32,9 +36,3 @@ export GOPATH=$HOME/prog/go
 export NVM_DIR="/home/mitch/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# Source mkvirtualenv script add ~/.virtualenv directory containing virtualenv's
-if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PROJECT_HOME=$HOME/prog/python
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
