@@ -1,4 +1,6 @@
 alias tmux='tmux -2 new-session -A -s main'
+alias k="kubectl"
+alias python="/usr/bin/python3"
 
 # If neovim installed use it
 if type nvim > /dev/null 2>&1; then
@@ -13,8 +15,6 @@ alias l='ls -CFl'
 # Find aliases
 alias ff="find . -type f -name"
 alias fr="find . -type f -regex"
-
-alias k="kubectl"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -34,6 +34,8 @@ alias lock-screen='. ~/bin/lock.sh'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias xdg-runtime='export XDG_RUNTIME_DIR=/run/user/$(id -u)'
 
 #  Add config command for local conf files.
 #  This Alias allows adding and editing config files for each computer
@@ -55,6 +57,13 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 #    config commit -m "Add redshift config"
 #    config push
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+
+initnvm() {
+    # Source nvm
+    export NVM_DIR="/home/mitch/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+}
 
 # Generate alphanumeric random string, supply length as parameter, default length if 15
 genpasswd() {
@@ -217,4 +226,9 @@ function archnews {
     else
         echo "Unable to reach the internet"
     fi
+}
+
+fjq() {
+   local filename=$1
+   echo '' | fzf --preview 'jq {q} < ${filename}'  
 }

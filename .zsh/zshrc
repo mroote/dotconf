@@ -13,8 +13,8 @@ bindkey -e
 export LANG="en_CA.UTF-8"
 
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=100000
+HISTSIZE=100000
+SAVEHIST=1000000
 
 # Source aliases
 if [ -f $HOME/.shell_aliases ]; then
