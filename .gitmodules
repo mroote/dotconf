@@ -3,4 +3,4 @@
 	url = https://github.com/sindresorhus/pure.git
 [submodule ".config/nvim"]
 	path = .config/nvim
-	url = ssh://git@gitea.lan.r00t.ca:2222/mitch/nvim-conf.git
+	url = git@github.com:mroote/neovim-conf.git
