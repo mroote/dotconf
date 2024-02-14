@@ -12,7 +12,7 @@
     d = difftool
     c = commit -v
 [rerere]
-	enabled = 1
+	enabled = true
     autoupdate = true
 [diff]
     tool = vscode
@@ -22,3 +22,5 @@
     cmd = code --wait $MERGED
 [init]
 	defaultBranch = main
+[maintenance]
+	repo = /home/mitch/src/terraform/cloud-inf

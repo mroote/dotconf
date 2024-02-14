@@ -77,7 +77,7 @@ set wildmenu
 set wildmode=full
 
 " make status bar 2 lines
-set laststatus=2
+set laststatus=1
 
 " show hidden characters
 nnoremap <silent><F6> :set list!<CR>
