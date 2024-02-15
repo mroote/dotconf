@@ -128,7 +128,17 @@ openimage() {
 		--start-at "$file"
 }
 
+# open JSON in fzf, run live jq queries
 fjq() {
    local filename=$1
    echo '' | fzf --preview "jq {q} < ${filename}"
+}
+
+# json_diff
+json_diff() {
+	if [[ $# -eq 2 ]]; then
+		delta =(jq -S . $1) =(jq -S . $2)
+	else
+		echo "expected two arguments"
+	fi
 }

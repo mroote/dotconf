@@ -9,4 +9,4 @@
 [difftool]
     prompt = false
 [alias]
-	c = commit --verbose
+    c = commit --verbose
