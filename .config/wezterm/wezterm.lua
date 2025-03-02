@@ -44,6 +44,8 @@ config.macos_window_background_blur = 10
 
 config.enable_tab_bar = true
 
+config.audible_bell = "Disabled"
+
 config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
 config.window_frame = {
   font = wezterm.font { family = 'Hack Nerd Font', weight = 'Bold' },

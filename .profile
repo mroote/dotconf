@@ -25,6 +25,12 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+local python_dir="$(python3 -m site --user-base)/bin"
+if [ -d $python_dir ] ; then
+    PATH="${python_dir}:${PATH}"
+fi
+
+
 # add go bin paths
 PATH=$PATH:$HOME/prog/go/bin
 PATH=$PATH:/usr/local/go/bin
