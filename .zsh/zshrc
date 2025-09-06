@@ -39,4 +39,7 @@ zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl true
 zstyle :compinstall filename '/home/mitch/.zshrc'
+source <(fly completion --shell zsh)
 
+# opencode
+export PATH=/home/mitch/.opencode/bin:$PATH

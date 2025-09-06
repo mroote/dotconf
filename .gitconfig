@@ -24,3 +24,4 @@
 	defaultBranch = main
 [maintenance]
 	repo = /home/mitch/src/terraform/cloud-inf
+	repo = /home/mitch/src/ansible/cloud-inf

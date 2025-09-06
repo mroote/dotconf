@@ -7,6 +7,7 @@
 EDITOR="/usr/bin/nvim"
 VISUAL=$EDITOR
 GODIR="$HOME/src/go"
+ASDFDIR="$HOME/.asdf"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -32,11 +33,17 @@ if [ -d $GODIR ] ; then
     export GOPATH=$GODIR
 fi
 
+if [ -d ${ASDFDIR} ] ; then
+   . "${ASDFDIR}"
+fi
+
 # add nim paths
 PATH=$PATH:/home/mitch/.nimble/bin
 
 if [ -f /usr/bin/virtualenvwrapper.sh ] || [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
     export WORKON_HOME=$HOME/.virtualenvs
     export PROJECT_HOME=$HOME/prog/python
-    source /usr/bin/virtualenvwrapper.sh
+    . /usr/bin/virtualenvwrapper.sh
 fi
+
+export XDG_RUNTIME_DIR="/tmp/"
