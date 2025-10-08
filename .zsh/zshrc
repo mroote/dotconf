@@ -5,6 +5,10 @@ autoload -Uz compinit && compinit
 autoload -U promptinit && promptinit
 prompt pure
 
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
+
 setopt autocd extendedglob notify
 unsetopt beep nomatch
 bindkey -e
@@ -39,7 +43,14 @@ zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl true
 zstyle :compinstall filename '/home/mitch/.zshrc'
-source <(fly completion --shell zsh)
+
+if command -v fly &>/dev/null; then
+	source <(fly completion --shell zsh)
+fi
 
 # opencode
 export PATH=/home/mitch/.opencode/bin:$PATH
+
+# OpenHands CLI aliases
+alias openhands="uvx --python 3.12 --from openhands-ai openhands"
+alias oh="uvx --python 3.12 --from openhands-ai openhands"

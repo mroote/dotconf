@@ -22,6 +22,16 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "$HOME/.nimble" ] ; then
+    # add nim paths
+    PATH=$PATH:/home/mitch/.nimble/bin
+fi
+
+if [ -d "$HOME/.yarn" ] ; then
+    # add yarn paths
+    PATH=$PATH:/home/mitch/.yarn/bin
+fi
+
 GODIR="$HOME/src/go"
 
 # add go bin paths
@@ -37,9 +47,6 @@ if [ -d ${ASDFDIR} ] ; then
    . "${ASDFDIR}"
 fi
 
-# add nim paths
-PATH=$PATH:/home/mitch/.nimble/bin
-
 if [ -f /usr/bin/virtualenvwrapper.sh ] || [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
     export WORKON_HOME=$HOME/.virtualenvs
     export PROJECT_HOME=$HOME/prog/python
@@ -47,3 +54,4 @@ if [ -f /usr/bin/virtualenvwrapper.sh ] || [ -f /usr/local/bin/virtualenvwrapper
 fi
 
 export XDG_RUNTIME_DIR="/tmp/"
+

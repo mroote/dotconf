@@ -1,6 +1,5 @@
 alias tmux-main='tmux new-session -A -s main'
 alias k="kubectl"
-alias python="/usr/bin/python3"
 
 # If neovim installed use it
 if type nvim > /dev/null 2>&1; then
