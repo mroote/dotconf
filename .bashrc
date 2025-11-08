@@ -78,3 +78,8 @@ fi
 # Auto cd to directory if only directory is provided
 shopt -s autocd
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/mitch/.lmstudio/bin"
+# End of LM Studio CLI section
+
