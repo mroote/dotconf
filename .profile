@@ -55,3 +55,8 @@ fi
 
 export XDG_RUNTIME_DIR="/tmp/"
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/mitch/.lmstudio/bin"
+# End of LM Studio CLI section
+

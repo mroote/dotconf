@@ -3,15 +3,21 @@
 fpath+=$HOME/.zsh/themes/pure
 autoload -Uz compinit && compinit
 autoload -U promptinit && promptinit
+source ~/.zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 prompt pure
 
-bindkey  "^[[H"   beginning-of-line
-bindkey  "^[[F"   end-of-line
-bindkey  "^[[3~"  delete-char
+bindkey -e
+bindkey "^[[H"   beginning-of-line
+bindkey "^[[F"   end-of-line
+bindkey "\e[1~"  beginning-of-line
+bindkey "\e[4~"  end-of-line
+bindkey "^[[3~"  delete-char
+
+# Enable ctl-r history search
+bindkey '^R' history-incremental-search-backward
 
 setopt autocd extendedglob notify
 unsetopt beep nomatch
-bindkey -e
 
 # Set prompt to UTF-8
 export LANG="en_CA.UTF-8"
@@ -29,10 +35,6 @@ if [ -f ~/.profile ] ; then
     source $HOME/.profile
 fi
 
-# Enable ctl-r history search
-bindkey -v
-bindkey '^R' history-incremental-search-backward
-
 # Set correct TERM if running tmux
 [[ $TMUX != "" ]] && export TERM="screen-256color"
 
@@ -45,12 +47,13 @@ zstyle ':completion:*' use-compctl true
 zstyle :compinstall filename '/home/mitch/.zshrc'
 
 if command -v fly &>/dev/null; then
-	source <(fly completion --shell zsh)
+    source <(fly completion --shell zsh)
 fi
 
 # opencode
 export PATH=/home/mitch/.opencode/bin:$PATH
 
-# OpenHands CLI aliases
-alias openhands="uvx --python 3.12 --from openhands-ai openhands"
-alias oh="uvx --python 3.12 --from openhands-ai openhands"
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/mitch/.lmstudio/bin"
+# End of LM Studio CLI section
+

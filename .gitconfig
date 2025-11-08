@@ -2,7 +2,7 @@
     email = mitch@r00t.ca
     name = Mitch Roote
 [core]
-    editor = vi
+    editor = nvim
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [difftool]
     prompt = false
@@ -12,7 +12,7 @@
     d = difftool
     c = commit -v
 [rerere]
-	enabled = true
+    enabled = true
     autoupdate = true
 [diff]
     tool = vscode
@@ -21,7 +21,7 @@
 [mergetool "vscode"]
     cmd = code --wait $MERGED
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [maintenance]
-	repo = /home/mitch/src/terraform/cloud-inf
-	repo = /home/mitch/src/ansible/cloud-inf
+    repo = /home/mitch/src/terraform/cloud-inf
+    repo = /home/mitch/src/ansible/cloud-inf

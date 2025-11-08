@@ -57,6 +57,10 @@ alias xdg-runtime='export XDG_RUNTIME_DIR=/run/user/$(id -u)'
 #    config push
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 
+# OpenHands CLI aliases
+alias openhands="uvx --python 3.12 --from openhands-ai openhands"
+alias oh="uvx --python 3.12 --from openhands-ai openhands"
+
 initnvm() {
     # Source nvm
     export NVM_DIR="/home/mitch/.nvm"
